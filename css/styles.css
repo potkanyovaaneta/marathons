@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a0089;
+    --background: #faf6ef;
+    --accent: #b7cf4f;
+    --primary-dark: #0d0044;
+    --primary-light: #2d00b8;
+    --accent-dark: #9ab83f;
+    --text: #333333;
+    --text-light: #faf6ef;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* navigation */
+nav {
+    background: var(--primary);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(26, 0, 137, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+nav a:hover,
+nav a.active {
+    background: var(--accent);
+    color: var(--text); 
+}
+
+/* hero section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text); 
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--text); 
+}
+
+.hero p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background: var(--accent);
+    color: var(--text); 
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(183, 207, 79, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(183, 207, 79, 0.5);
+    background: var(--accent-dark);
+}
+
+/* marathons page */
+.marathons-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.marathons-container h2 {
+    text-align: center;
+    color: var(--text); 
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.continent-section {
+    margin-bottom: 4rem;
+}
+
+.continent-header {
+    color: var(--text); 
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(26, 0, 137, 0.1);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* === MODIFIED MARATHON CARD === */
+.marathon-card {
+    min-width: 300px;
+    margin: 0 1rem;
+    background: var(--background);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    /* padding: 2rem;  <-- REMOVED */
+    overflow: hidden; /* <-- ADDED: clips the image corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+}
+
+.marathon-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(26, 0, 137, 0.2);
+}
+
+/* === NEW STYLE FOR CARD IMAGE === */
+.marathon-card img {
+    width: 100%;
+    height: 180px; /* You can adjust this height */
+    object-fit: cover; /* Ensures the image fills the space */
+    display: block;
+}
+
+/* === NEW STYLE FOR CARD CONTENT === */
+.card-content {
+    padding: 2rem; /* The padding was moved here */
+}
+
+.marathon-card h3 {
+    color: var(--text); 
+    margin-bottom: 1rem;
+}
+
+.marathon-card p {
+    color: var(--text);
+    margin-bottom: 0.25rem; 
+}
+
+.marathon-card p.coming-soon-text {
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-transform: lowercase;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text); 
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background: var(--accent-dark);
+    box-shadow: 0 4px 15px rgba(183, 207, 79, 0.4);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* marathon detail page */
+.detail-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.back-button {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--text); 
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: all 0.3s;
+}
+
+.back-button:hover {
+    background: var(--accent-dark);
+    transform: translateX(-5px);
+}
+
+.detail-header {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(26, 0, 137, 0.1);
+    border-left: 5px solid var(--accent);
+}
+
+.detail-header h2 {
+    color: var(--text); 
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.detail-header p {
+    color: var(--text);
+}
+
+#map {
+    width: 100%;
+    height: 600px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 3px solid var(--accent);
+}
+
+/* === controls wrapper === */
+.controls-wrapper {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap; 
+}
+
+/* === filter styles === */
+.filter-container {
+    flex: 1; 
+    min-width: 300px; 
+    padding: 1.5rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(26, 0, 137, 0.1);
+    border-top: 4px solid var(--accent);
+    display: flex;
+    flex-direction: column; 
+    gap: 1rem; 
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--text); 
+    text-transform: lowercase;
+    font-size: 0.9rem;
+}
+
+.filter-group select {
+    padding: 0.5rem;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--background);
+    color: var(--text);
+    cursor: pointer;
+    width: 100%; 
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26, 0, 137, 0.1);
+}
+
+/* === legend styles === */
+.legend-container {
+    flex: 1; 
+    min-width: 300px; 
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(26, 0, 137, 0.1);
+    border-top: 4px solid var(--accent);
+    margin-top: 0; 
+}
+
+.legend-subtitle {
+    color: var(--text); 
+    text-transform: lowercase;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 4px;
+}
+
+.legend-subtitle:first-child {
+    margin-top: 0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; 
+    margin: 0.75rem 0;
+    color: var(--text);
+    text-transform: lowercase; 
+}
+
+.legend-line {
+    width: 30px; 
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.legend-km-marker {
+    background: #b7cf4f;
+    color: var(--primary); 
+    font-weight: bold;
+    font-size: 12px;
+    border: 2px solid #1a0089;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px; 
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.legend-marker {
+    font-size: 1.5rem;
+}
+
+.legend-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* leaflet marker background fix */
+.custom-marker,
+.km-marker {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* leaflet control styles */
+.leaflet-control-layers-expanded {
+    padding: 10px;
+    background: white; 
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.leaflet-control-layers-base label {
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 0; 
+}
+
+.leaflet-control-layers-selector {
+    width: auto;
+    margin-right: 8px;
+    accent-color: var(--accent); 
+}
+
+/* popup styling */
+.leaflet-popup-content {
+    max-width: 300px;
+}
+
+.popup-content h4 {
+    color: var(--text); 
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.popup-content img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    border: 2px solid var(--accent);
+}
+
+.popup-content p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.marathon-card p {
+    color: var(--text);
+}
+
+/* about page */
+.about-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(26, 0, 137, 0.15);
+}
+
+.about-container h2 {
+    color: var(--text); 
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 1rem;
+}
+
+.about-container p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+/* responsive design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .marathon-card {
+        min-width: 250px;
+    }
+    
+    #map {
+        height: 400px;
+    }
+
+    /* controls wrapper will stack vertically because of flex-wrap */
+}

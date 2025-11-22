@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marathon details - marathon city explorer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="marathons.html">marathons</a></li>
+            <li><a href="about.html">about & contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="detail-container">
+        <a href="marathons.html" class="back-button">back to marathons</a>
+        <div class="detail-header">
+            <h2 id="marathon-title">loading...</h2>
+            <p id="marathon-description"></p>
+        </div>
+        
+        <div id="map"></div>
+
+        <div class="controls-wrapper">
+
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="poi-filter">filter by type</label>
+                    <select id="poi-filter">
+                        <option value="all">show all</option>
+                        <option value="1">culture</option>
+                        <option value="2">nature</option>
+                        <option value="3">activity</option>
+                        <option value="4">food & drinks</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group" id="cuisine-filter-group" style="display: none;">
+                    <label for="cuisine-filter">filter by cuisine</label>
+                    <select id="cuisine-filter">
+                        <option value="all">all cuisines</option>
+                        </select>
+                </div>
+            </div>
+            <div class="legend-container">
+                <h3 class="legend-subtitle">route</h3>
+                <div class="legend-item">
+                    <span class="legend-line"></span>
+                    <span>marathon route</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-km-marker">5</span>
+                    <span>kilometer marker</span>
+                </div>
+
+                <p>&nbsp;</p>
+                
+                <h3 class="legend-subtitle">type</h3>
+                <div class="legend-item">
+                    <img src="css/kapr_type1.svg" alt="culture icon" class="legend-icon">
+                    <span>culture</span>
+                </div>
+                <div class="legend-item">
+                    <img src="css/kapr_type2.svg" alt="nature icon" class="legend-icon">
+                    <span>nature</span>
+                </div>
+                <div class="legend-item">
+                    <img src="css/kapr_type3.svg" alt="activity icon" class="legend-icon">
+                    <span>activity</span>
+                </div>
+                <div class="legend-item">
+                    <img src="css/kapr_type4.svg" alt="food & drinks icon" class="legend-icon">
+                    <span>food & drinks</span>
+                </div>
+            </div>
+            </div> </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>

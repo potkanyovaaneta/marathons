@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marathons - Marathon City Explorer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="marathons.html" class="active">marathons</a></li>
+            <li><a href="about.html">about & contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="topnav">
+    <input type="text" placeholder="search by city">
+    </div>
+
+    <div class="marathons-container">
+        <h2>choose your marathon adventure</h2>
+        
+        <div class="continent-section">
+            <h3 class="continent-header">africa</h3>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="scrollCarousel('africa', -1)">‹</button>
+                <div class="carousel-track" id="africa-track">
+                    <a href="marathon-detail.html?id=lagos" class="marathon-card">
+                        <img src="photo/lagos.jpg" alt="Lagos">
+                        <div class="card-content">
+                            <h3>access bank lagos city marathon</h3>
+                            <p>lagos, nigeria</p>
+                            <p>blah blah</p>
+                        </div>
+                    </a>
+
+                    <a href="marathon-detail.html?id=pietermaritzburg" class="marathon-card">
+                        <img src="photo/pietermaritzburg.jpg" alt="Pietermaritzburg">
+                        <div class="card-content">
+                            <h3>capital city42</h3>
+                            <p>pietermaritzburg, south africa</p>
+                            <p>blah blah</p>
+                        </div>
+                    </a>
+                </div>
+                <button class="carousel-button next" onclick="scrollCarousel('africa', 1)">›</button>
+            </div>
+        </div>
+
+        <div class="continent-section">
+            <h3 class="continent-header">north america</h3>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="scrollCarousel('north-america', -1)">‹</button>
+                <div class="carousel-track" id="north-america-track">
+                    <a href="marathon-detail.html?id=boston" class="marathon-card">
+                        <img src="photo/boston.jpg" alt="Boston">
+                        <div class="card-content">
+                            <h3>⭐ boston marathon</h3>
+                            <p>boston, usa</p>
+                            <p>the world's oldest annual marathon</p>
+                        </div>
+                    </a>
+                    <a href="marathon-detail.html?id=chicago" class="marathon-card">
+                        <img src="photo/chicago.jpg" alt="Chicago">
+                        <div class="card-content">
+                            <h3>⭐ bank of america chicago marathon</h3>
+                            <p>chicago, usa</p>
+                            <p>fast and flat through the windy city</p>
+                        </div>
+                    </a>
+                    <a href="marathon-detail.html?id=nyc" class="marathon-card">
+                        <img src="photo/newyork.jpg" alt="New York City">
+                        <div class="card-content">
+                            <h3>⭐ tcs new york city marathon (nyrr)</h3>
+                            <p>new york, usa</p>
+                            <p>five boroughs of pure energy</p>
+                        </div>
+                    </a>
+                    
+                    <a href="marathon-detail.html?id=chicago" class="marathon-card">
+                        <img src="photo/chicago.jpg" alt="Chicago">
+                        <div class="card-content">
+                            <h3>⭐ bank of america chicago marathon</h3>
+                            <p>chicago, usa</p>
+                            <p>fast and flat through the windy city</p>
+                        </div>
+                    </a>
+                </div>
+                <button class="carousel-button next" onclick="scrollCarousel('north-america', 1)">›</button>
+            </div>
+        </div>
+        
+        <div class="continent-section">
+            <h3 class="continent-header">south america</h3>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="scrollCarousel('south-america', -1)">‹</button>
+                <div class="carousel-track" id="south-america-track">
+                    <a href="marathon-detail.html?id=buenos-aires" class="marathon-card">
+                        <img src="photo/buenos-aires.jpg" alt="Buenos Aires">
+                        <div class="card-content">
+                            <h3>buenos aires international marathon</h3>
+                            <p>buenos aires, argentina</p>
+                            <p>passion and rhythm in every step</p>
+                        </div>
+                    </a>
+
+                    <a href="marathon-detail.html?id=caracas" class="marathon-card">
+                        <img src="photo/caracas.jpg" alt="Caracas">
+                        <div class="card-content">
+                            <h3>maratón caf caracas</h3>
+                            <p>caracas, venezuela</p>
+                            <p>blah blah</p>
+                        </div>
+                    </a>
+
+                    <a href="marathon-detail.html?id=buenos-aires" class="marathon-card">
+                        <img src="photo/caracas.jpg" alt="Caracas">
+                        <div class="card-content">
+                            <h3>maratón caf caracas</h3>
+                            <p>caracas, venezuela</p>
+                            <p>blah blah</p>
+                        <p class="coming-soon-text">coming soon</p>
+                        </div>
+                    </a>
+                </div>
+                <button class="carousel-button next" onclick="scrollCarousel('south-america', 1)">›</button>
+            </div>
+        </div>
+
+        <div class="continent-section">
+            <h3 class="continent-header">asia</h3>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="scrollCarousel('asia', -1)">‹</button>
+                <div class="carousel-track" id="asia-track">
+                    <a href="marathon-detail.html?id=tokyo" class="marathon-card">
+                        <img src="photo/tokyo.jpg" alt="Tokyo">
+                        <div class="card-content">
+                            <h3>⭐ tokyo marathon</h3>
+                            <p>tokyo, japan</p>
+                            <p>ancient meets modern in perfect harmony</p>
+                        </div>
+                    </a>
+                    <a href="marathon-detail.html?id=almaty" class="marathon-card">
+                        <img src="images/almaty.jpg" alt="Almaty">
+                        <div class="card-content">
+                            <h3>almaty marathon</h3>
+                            <p>almaty, kazakhstan</p>
+                            <p></p>
+                            <p class="coming-soon-text">coming soon</p>
+                        </div>
+                    </a>
+                    <a href="marathon-detail.html?id=nagano" class="marathon-card">
+                        <img src="images/nagano.jpg" alt="Nagano">
+                        <div class="card-content">
+                            <h3>the nagano marathon</h3>
+                            <p>nagano, japan</p>
+                            <p></p>
+                            <p class="coming-soon-text">coming soon</p>
+                        </div>
+                    </a>
+                </div>
+                <button class="carousel-button next" onclick="scrollCarousel('asia', 1)">›</button>
+            </div>
+        </div>
+
+<div class="continent-section">
+            <h3 class="continent-header">australia & oceania</h3>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="scrollCarousel('australia-oceania', -1)">‹</button>
+                <div class="carousel-track" id="australia-oceania-track">
+                    
+                    <a href="marathon-detail.html?id=sydney" class="marathon-card">
+                        <img src="photo/sydney.jpg" alt="Sydney">
+                        <div class="card-content">
+                            <h3>⭐ tcs sydney marathon presented by asics</h3>
+                            <p>sydney, australia</p>
+                            <p>sun, sand, and city sights</p>
+                        </div>
+                    </a>
+
+                    <a href="marathon-detail.html?id=auckland" class="marathon-card">
+                        <img src="photo/auckland.jpg" alt="Auckland">
+                        <div class="card-content">
+                            <h3>barfoot & thompson auckland marathon</h3>
+                            <p>auckland, new zealand</p>
+                            <p>blah blah</p>
+                        </div>
+                    </a>
+
+                    <a href="marathon-detail.html?id=brisbane" class="marathon-card">
+                        <img src="photo/brisbane.jpg" alt="Brisbane">
+                        <div class="card-content">
+                            <h3>brisbane marathon</h3>
+                            <p>brisbane, australia</p>
+                            <p>blah blah</p>
+                        </div>
+                    </a>
+                </div> <button class="carousel-button next" onclick="scrollCarousel('australia-oceania', 1)">›</button>
+            </div>
+        </div>
+
+        <div class="continent-section">
+            <h3 class="continent-header">europe</h3>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="scrollCarousel('europe', -1)">‹</button>
+                <div class="carousel-track" id="europe-track">
+                    <a href="marathon-detail.html?id=berlin" class="marathon-card">
+                        <img src="photo/berlin.jpg" alt="Berlin">
+                        <div class="card-content">
+                            <h3>⭐ bmw berlin-marathon</h3>
+                            <p>berlin, germany</p>
+                            <p>run through history and modern culture</p>
+                        </div>
+
+                    <a href="marathon-detail.html?id=london" class="marathon-card">
+                        <img src="photo/london.jpeg" alt="London">
+                        <div class="card-content">
+                            <h3>⭐ tcs london marathon</h3>
+                            <p>london, united kingdom</p>
+                            <p>experience royal parks and iconic landmarks</p>
+                        </div>
+                    </a>
+
+                    </a>
+                    <a href="marathon-detail.html?id=stockholm" class="marathon-card">
+                        <img src="photo/stockholm.jpg" alt="Stockholm">
+                        <div class="card-content">
+                            <h3>adidas stockholm marathon</h3>
+                            <p>stockholm, sweden</p>
+                            <p>blah blah</p>
+                        </div>
+                    </a>
+                </div>
+                <button class="carousel-button next" onclick="scrollCarousel('europe', 1)">›</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
