@@ -53,7 +53,6 @@ function getPOIIcon(typeNumber) {
 const marathonData = {
     almaty: {
         name: 'almaty marathon',
-        description: '{blahblah}',
         center: [39.9042, 116.4074],
         zoom: 11,
         continent: 'asia',
@@ -62,7 +61,6 @@ const marathonData = {
     },
     auckland: {
         name: 'barfoot & thompson auckland marathon',
-        description: '{blahblah}',
         center: [39.9042, 116.4074],
         zoom: 11,
         continent: 'australia-oceania',
@@ -71,7 +69,6 @@ const marathonData = {
     },
     berlin: {
         name: 'bmw berlin-marathon',
-        description: 'known for its fast, flat course through the heart of berlin, passing the brandenburg gate and historic sites.',
         center: [52.5200, 13.4050],
         zoom: 12,
         continent: 'europe',
@@ -80,7 +77,6 @@ const marathonData = {
     },
     boston: {
         name: 'boston marathon',
-        description: 'the oldest annual marathon in the world, featuring the notorious heartbreak hill.',
         center: [42.3601, -71.0589],
         zoom: 11,
         continent: 'north-america',
@@ -89,7 +85,6 @@ const marathonData = {
     },
     brisbane: {
         name: 'brisbane marathon',
-        description: 'blah blah',
         center: [52.5200, 13.4050],
         zoom: 12,
         continent: 'australia-oceania',
@@ -97,7 +92,6 @@ const marathonData = {
         poisFile: 'data/oceania/brisbane-pois.geojson'
     },
     'buenos-aires': {
-        name: 'buenos aires international marathon',
         description: 'blah blah',
         center: [52.5200, 13.4050],
         zoom: 12,
@@ -112,7 +106,6 @@ const marathonData = {
     },
     caracas: {
         name: 'maratón caf caracas',
-        description: 'blah blah',
         center: [52.5200, 13.4050],
         zoom: 12,
         continent: 'south-america',
@@ -121,7 +114,6 @@ const marathonData = {
     },
     chicago: {
         name: 'bank of america chicago marathon',
-        description: 'a flat and fast course through 29 vibrant chicago neighborhoods.',
         center: [41.8781, -87.6298],
         zoom: 11,
         continent: 'north-america',
@@ -130,7 +122,6 @@ const marathonData = {
     },
     london: {
         name: 'tcs london marathon',
-        description: 'one of the world marathon majors, showcasing iconic landmarks like tower bridge, big ben, and buckingham palace.',
         center: [51.5074, -0.1278],
         zoom: 11,
         continent: 'europe',
@@ -139,7 +130,6 @@ const marathonData = {
     },
     lagos: {
         name: 'access bank lagos city marathon',
-        description: 'blah blah',
         center: [51.5074, -0.1278],
         zoom: 11,
         continent: 'africa',
@@ -148,7 +138,6 @@ const marathonData = {
     },
     nagano: {
         name: 'the nagano marathon',
-        description: '{blahblah}',
         center: [39.9042, 116.4074],
         zoom: 11,
         continent: 'asia',
@@ -157,7 +146,6 @@ const marathonData = {
     },
     nyc: {
         name: 'tcs new york city marathon (nyrr)',
-        description: 'the largest marathon in the world, touring all five boroughs of new york city.',
         center: [40.7128, -74.0060],
         zoom: 11,
         continent: 'north-america',
@@ -166,7 +154,6 @@ const marathonData = {
     },
     pietermaritzburg: {
         name: 'capital city42',
-        description: 'blah blah',
         center: [48.8566, 2.3522],
         zoom: 11,
         continent: 'africa',
@@ -175,7 +162,6 @@ const marathonData = {
     },
     stockholm: {
         name: 'adidas stockholm marathon',
-        description: 'blah blah',
         center: [39.9042, 116.4074],
         zoom: 11,
         continent: 'europe',
@@ -184,7 +170,6 @@ const marathonData = {
     },
     sydney: {
         name: 'tcs sydney marathon presented by asics',
-        description: '{blah blah}',
         center: [39.9042, 116.4074],
         zoom: 11,
         continent: 'australia-oceania',
@@ -193,7 +178,6 @@ const marathonData = {
     },
     tokyo: {
         name: 'tokyo marathon',
-        description: 'experience the blend of traditional and modern tokyo through this popular city marathon.',
         center: [35.6762, 139.6503],
         zoom: 11,
         continent: 'asia',
