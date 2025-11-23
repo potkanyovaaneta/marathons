@@ -53,11 +53,8 @@ function getPOIIcon(typeNumber) {
 const marathonData = {
     almaty: {
         name: 'almaty marathon',
-        center: [39.9042, 116.4074],
-        zoom: 11,
         continent: 'asia',
-        routeFile: 'data/asia/almaty-route.geojson',
-        poisFile: 'data/asia/nagano-pois.geojson'
+        status: 'coming-soon'
     },
     auckland: {
         name: 'barfoot & thompson auckland marathon',
@@ -70,7 +67,7 @@ const marathonData = {
     berlin: {
         name: 'bmw berlin-marathon',
         center: [52.5200, 13.4050],
-        zoom: 12,
+        zoom: 11,
         continent: 'europe',
         routeFile: 'data/europe/berlin-route.geojson',
         poisFile: 'data/europe/berlin-pois.geojson'
@@ -83,10 +80,15 @@ const marathonData = {
         routeFile: 'data/north-america/boston-route.geojson',
         poisFile: 'data/north-america/boston-pois.geojson'
     },
+    brasilia: {
+        name: 'maratona monumental de brasília',
+        continent: 'australia-oceania',
+        status: 'coming-soon'
+    },
     brisbane: {
         name: 'brisbane marathon',
         center: [52.5200, 13.4050],
-        zoom: 12,
+        zoom: 11,
         continent: 'australia-oceania',
         routeFile: 'data/oceania/brisbane-route.geojson',
         poisFile: 'data/oceania/brisbane-pois.geojson'
@@ -107,7 +109,7 @@ const marathonData = {
     caracas: {
         name: 'maratón caf caracas',
         center: [52.5200, 13.4050],
-        zoom: 12,
+        zoom: 11,
         continent: 'south-america',
         routeFile: 'data/south-america/caracas-route.geojson',
         poisFile: 'data/south-america/caracas-pois.geojson'
@@ -193,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (!marathonId || !marathonData[marathonId]) {
         document.getElementById('marathon-title').textContent = 'marathon not found';
-        document.getElementById('marathon-description').textContent = 'please return to the marathons page and select a valid marathon.';
+        document.getElementById('marathon-description').textContent = 'please return to the marathons page and select a valid marathon';
         return;
     }
     
@@ -201,11 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Update page title
     document.getElementById('marathon-title').textContent = marathon.name;
-    document.title = `${marathon.name} - marathon city explorer`;
+    document.title = `${marathon.name}`;
 
     // === "COMING SOON" CHECK ===
     if (marathon.status === 'coming-soon') {
-        document.getElementById('marathon-description').textContent = 'marathon data is coming soon for this event.';
+        document.getElementById('marathon-description').textContent = 'this event is coming soon :)';
         const mapElement = document.getElementById('map');
         if (mapElement) {
             mapElement.style.display = 'none';
@@ -224,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(async () => {
         const mapElement = document.getElementById('map');
         if (!mapElement) {
-            console.error('Map element not found');
+            console.error('map element not found');
             return;
         }
         
