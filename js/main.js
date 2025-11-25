@@ -1,46 +1,47 @@
 // Carousel functionality
-const carouselPositions = {
-    'europe': 0,
-    'north-america': 0,
-    'asia': 0,
-    'africa': 0,
-    'south-america': 0,
-    'australia-oceania': 0
-};
+const carouselPositions = {};
 
 function scrollCarousel(continent, direction) {
     const track = document.getElementById(`${continent}-track`);
     if (!track) return;
-    
-    // === THIS IS THE FIX ===
-    // card width (300px) + margins (1rem * 2 = 32px)
-    const cardWidth = 332; 
-    // ======================
-    
+
+    // 1. Get the container width to calculate how much is visible
     const container = track.parentElement;
-    if (!container) return;
+    const containerWidth = container.offsetWidth;
+    
+    // 2. Dynamically calculate card width (width + margins)
+    // This is safer than hardcoding 332
+    const firstCard = track.querySelector('.marathon-card');
+    if (!firstCard) return;
+    
+    // Get style to include margins in calculation
+    const style = window.getComputedStyle(firstCard);
+    const cardWidth = firstCard.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
 
-    const visibleCards = Math.floor(container.offsetWidth / cardWidth);
-    const maxCards = track.children.length;
+    // 3. Calculate limits
+    const totalWidth = track.scrollWidth;
+    // The maximum we can scroll to the left (a negative number)
+    const maxScroll = -(totalWidth - containerWidth);
 
-    // Don't scroll if all cards are visible
-    if (visibleCards >= maxCards) {
-        track.style.transform = `translateX(0px)`;
+    // Initialize position if not set
+    if (carouselPositions[continent] === undefined) {
         carouselPositions[continent] = 0;
-        return;
     }
 
-    const maxScroll = -(maxCards - visibleCards) * cardWidth;
-    
-    if (isNaN(carouselPositions[continent])) {
+    // 4. Update Position
+    // We subtract because "Next" (1) needs to make the X value more negative
+    // We add when "Prev" (-1) to make the X value closer to 0
+    carouselPositions[continent] -= direction * cardWidth;
+
+    // 5. Clamp the position
+    // Ensure we don't scroll past the start (0) or past the end (maxScroll)
+    if (carouselPositions[continent] > 0) {
         carouselPositions[continent] = 0;
     }
+    if (carouselPositions[continent] < maxScroll) {
+        carouselPositions[continent] = maxScroll;
+    }
     
-    carouselPositions[continent] += direction * cardWidth;
-    
-    // Clamp the position between 0 (start) and maxScroll (end)
-    carouselPositions[continent] = Math.max(maxScroll, Math.min(0, carouselPositions[continent]));
-    
+    // Apply the transform
     track.style.transform = `translateX(${carouselPositions[continent]}px)`;
 }
-

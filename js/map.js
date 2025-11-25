@@ -94,7 +94,7 @@ const marathonData = {
         poisFile: 'data/oceania/brisbane-pois.geojson'
     },
     'buenos-aires': {
-        description: 'blah blah',
+        name: 'buenos aires international marathon',
         center: [52.5200, 13.4050],
         zoom: 12,
         continent: 'south-america',
@@ -136,7 +136,7 @@ const marathonData = {
         zoom: 11,
         continent: 'africa',
         routeFile: 'data/africa/lagos-route.geojson',
-        poisFile: 'data/africa/lagod-pois.geojson'
+        poisFile: 'data/africa/lagos-pois.geojson'
     },
     nagano: {
         name: 'the nagano marathon',
@@ -156,11 +156,8 @@ const marathonData = {
     },
     pietermaritzburg: {
         name: 'capital city42',
-        center: [48.8566, 2.3522],
-        zoom: 11,
         continent: 'africa',
-        routeFile: 'data/africa/pietermaritzburg-route.geojson',
-        poisFile: 'data/africa/pietermaritzburg-pois.geojson'
+        status: 'coming-soon'
     },
     stockholm: {
         name: 'adidas stockholm marathon',
@@ -259,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 4. Add the layer control to the map
         L.control.layers(baseLayers, null, {collapsed: true}).addTo(map);
+        
         
         // Force map to resize properly
         setTimeout(() => {
