@@ -182,6 +182,11 @@ const marathonData = {
         continent: 'asia',
         routeFile: 'data/asia/tokyo-route.geojson',
         poisFile: 'data/asia/tokyo-pois.geojson'
+    },
+    toronto: {
+        name: 'tcs toronto waterfront marathon',
+        continent: 'north-america',
+        status: 'coming-soon'
     }
 };
 
