@@ -435,7 +435,7 @@ async function loadGeoJSON(filepath, map, type) {
             
             map.fitBounds(routeLayer.getBounds());
             addKilometerMarkers(routeLayer, map);
-
+            
         } else if (type === 'poi') {
             poiGeojsonData = geojsonData; 
 
